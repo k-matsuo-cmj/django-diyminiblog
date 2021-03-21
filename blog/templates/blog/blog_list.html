@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h2>ブログ一覧</h2>
+{% if blog_list %}
+<ul>
+{% for blog in blog_list %}
+    <li>
+        <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a> ({{ blog.author }} - {{ blog.post_date|date:"Y年n月j日" }})
+    </li>
+{% endfor %}
+</ul>
+{% else %}
+<p>There are no blogs.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h2>ブロガー： {{ blogauthor }}</h2>
+<br>
+<h3>自己紹介</h3>
+<p>{{ blogauthor.bio }}</p>
+<br>
+<h3>これまでのブログ</h3>
+<ul>
+{% for blog in blogauthor.blog_set.all %}
+    <li>
+        <a href={{ blog.get_absolute_url }}>{{ blog.name }}</a> ({{ blog.post_date|date:"Y-m-j" }})
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}
