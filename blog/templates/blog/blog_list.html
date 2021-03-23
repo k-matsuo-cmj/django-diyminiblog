@@ -2,13 +2,15 @@
 {% block content %}
 <h2>ブログ一覧</h2>
 {% if blog_list %}
-<ul>
+<div class="list-group">
 {% for blog in blog_list %}
-    <li>
-        <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a> ({{ blog.author }} - {{ blog.post_date|date:"Y年n月j日" }})
-    </li>
+    <div class="list-group-item d-flex justify-content-between">
+        {% comment %} <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a> ({{ blog.author }} - {{ blog.post_date|date:"Y年n月j日" }}) {% endcomment %}
+        <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a>
+        <span>{{ blog.author }} - {{ blog.post_date|date:"Y年n月j日" }}</span>
+    </div>
 {% endfor %}
-</ul>
+</div>
 {% else %}
 <p>There are no blogs.</p>
 {% endif %}

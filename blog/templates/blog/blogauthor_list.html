@@ -2,13 +2,13 @@
 {% block content %}
 <h2>ブロガー一覧</h2>
 {% if blogauthor_list %}
-<ul>
+<div class="list-group">
 {% for blogger in blogauthor_list %}
-    <li>
+    <div class="list-group-item">
         <a href="{{ blogger.get_absolute_url }}">{{ blogger.user.last_name }} {{ blogger.user.first_name }}</a>
-    </li>
+    </div>
 {% endfor %}
-</ul>
+</div>
 {% else %}
 <p>There are no bloggers.</p>
 {% endif %}
