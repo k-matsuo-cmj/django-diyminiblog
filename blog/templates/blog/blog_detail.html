@@ -6,7 +6,7 @@
 <br>
 <p>ブロガー： <a href="{{ blog.author.get_absolute_url }}">{{ blog.author }}</a></p>
 <br>
-<p>{{ blog.description }}</p>
+<p>{{ blog.description|linebreaksbr }}</p>
 <br>
 <h5>コメント</h5>
 {% if blog.blogcomment_set.all %}
@@ -14,7 +14,7 @@
 {% for comment in blog.blogcomment_set.all %}
     <hr>
     <dt>{{ comment.author }} ({{ comment.post_date}})</dt>
-    <dd>{{ comment.description }}</dd>
+    <dd>{{ comment.description|linebreaksbr }}</dd>
 {% endfor %}
 </dl>
 {% else %}
