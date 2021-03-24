@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'imageapp.apps.ImageappConfig',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,6 @@ LOGGING = {
         },
     },
 }
+
+IMAGE_ROOT = os.path.join(BASE_DIR, 'images')
+IMAGE_URL = '/images/'

@@ -25,3 +25,8 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('', RedirectView.as_view(url='/blog/')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# imageapp
+urlpatterns += [
+    path('image/', include('imageapp.urls')),
+] + static(settings.IMAGE_URL, document_root=settings.IMAGE_ROOT)
